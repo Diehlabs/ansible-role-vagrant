@@ -12,7 +12,6 @@ apt_pkgs:
   - virtualbox
   vagrant:
   - vagrant
-  - vagrant-manager
 
 choco_pkgs:
   virtualbox:
