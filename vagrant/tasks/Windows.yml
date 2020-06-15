@@ -16,4 +16,6 @@
   win_feature:
     name: Microsoft-Hyper-V
     state: present
+    include_sub_features: yes
+    include_management_tools: yes
   when: "install_hyperv == true"
