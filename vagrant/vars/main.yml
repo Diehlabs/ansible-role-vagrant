@@ -1,2 +1,23 @@
 ---
-# vars file for vagrant
+brew_cask_packages:
+  virtualbox:
+  - virtualbox
+  - virtualbox-extension-pack
+  vagrant:
+  - vagrant
+  - vagrant-manager
+
+apt_pkgs:
+  virtualbox:
+  - virtualbox
+  - virtualbox-extension-pack
+  vagrant:
+  - vagrant
+  - vagrant-manager
+
+choco_pkgs:
+  virtualbox:
+  - virtualbox
+  vagrant:
+  - vagrant
+  - vagrant-manager

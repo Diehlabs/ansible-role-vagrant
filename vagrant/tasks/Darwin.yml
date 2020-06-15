@@ -1,0 +1,22 @@
+---
+- name: Installing Homebrew Cask Packages (Virtualbox)
+  homebrew_cask:
+    name: {{ brew_cask_packages.virtualbox }}
+    state: present
+  when: {{ install_vbox }} == true
+
+- name: Installing Homebrew Packages (Virtualbox)
+  homebrew:
+    name: {{ brew_packages.virtualbox }}
+    state: present
+  when: {{ install_vbox }} == true
+
+- name: Installing Homebrew Cask Packages (VAGRANT)
+  homebrew_cask:
+    name: {{ brew_cask_packages.vagrant }}
+    state: present
+
+- name: Installing Homebrew Packages (VAGRANT)
+  homebrew:
+    name: {{ brew_packages.vagrant }}
+    state: present

@@ -1,0 +1,12 @@
+---
+- name: Install Chocolatey packages (VirtualBox)
+  win_chocolatey:
+    name: {{ item }}
+    state: present
+  with_items: {{ choco_pkgs.virtualbox }}
+
+- name: Install Chocolatey packages (VirtualBox)
+  win_chocolatey:
+    name: {{ item }}
+    state: present
+  with_items: {{ choco_pkgs.vagrant }}

@@ -1,2 +1,2 @@
 ---
-# defaults file for vagrant
+install_vbox: false

@@ -1,0 +1,11 @@
+---
+- name: Installing apt Packages (Virtualbox)
+  apt:
+    pkg: {{ apt_pkgs.virtualbox }}
+    state: present
+  when: {{ install_vbox }} == true
+
+- name: Installing apt Packages (VAGRANT)
+  apt:
+    pkg: {{ apt_pkgs.vagrant }}
+    state: present
