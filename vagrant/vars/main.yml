@@ -2,7 +2,7 @@
 brew_cask_packages:
   virtualbox:
   - virtualbox
-  - virtualbox-extension-pack
+  #- virtualbox-extension-pack
   vagrant:
   - vagrant
   - vagrant-manager
@@ -10,7 +10,6 @@ brew_cask_packages:
 apt_pkgs:
   virtualbox:
   - virtualbox
-  - virtualbox-extension-pack
   vagrant:
   - vagrant
   - vagrant-manager
