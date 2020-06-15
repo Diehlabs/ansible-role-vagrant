@@ -4,10 +4,16 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ choco_pkgs.virtualbox }}"
-  when: "{{ install_vbox }} == true"
+  when: "install_vbox == true"
 
 - name: Install Chocolatey packages (VAGRANT)
   win_chocolatey:
     name: "{{ item }}"
     state: present
   with_items: "{{ choco_pkgs.vagrant }}"
+
+- name: Install Hyper-V
+  win_feature:
+    name: Microsoft-Hyper-V
+    state: present
+  when: "install_hyperv == true"

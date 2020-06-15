@@ -1,2 +1,3 @@
 ---
 install_vbox: false
+install_hyperv: false

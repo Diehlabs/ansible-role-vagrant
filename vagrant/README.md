@@ -16,6 +16,9 @@ A description of the settable variables for this role should go here, including 
 install_vbox: [bool]
 This variable determines whether or not VirtualBox will be installed.
 
+install_hyperv: [bool]
+This variable determines whether or not Hyper-V will be installed. Only evaluated for Windows systems.
+
 Dependencies
 ------------
 
