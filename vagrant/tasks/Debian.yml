@@ -3,7 +3,7 @@
   apt:
     pkg: "{{ apt_pkgs.virtualbox }}"
     state: present
-  when: "install_vbox == true"
+  when: "vbox.install == true"
 
 - name: Installing apt Packages (VAGRANT)
   apt:

@@ -7,3 +7,11 @@
 
  - include: Windows.yml
    when: ansible_os_family == 'Windows'
+
+ - name: Check VM storage directory setting
+   shell: vboxmanage list systemproperties | grep folder
+   register: current_vm_dir
+   notify:
+     - Set VM storage directory
+   when:
+     - vbox.vm_storage_dir != "false"
