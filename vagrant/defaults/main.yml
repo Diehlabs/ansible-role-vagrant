@@ -3,5 +3,5 @@ install_hyperv: false
 vbox:
   install: false
   vm_storage_dir: "false"
-  vboxusers_group_users:
+  vboxusers_group_members:
   
