@@ -1,4 +1,4 @@
 ---
 - name: Set VM storage directory
-  shell: vboxmanage setproperty machinefolder {{ vm_storage_dir }}
+  shell: vboxmanage setproperty machinefolder {{ vbox.vm_storage_dir }}
   when: current_vm_dir != vbox.vm_storage_dir
