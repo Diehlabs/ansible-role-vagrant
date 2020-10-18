@@ -3,4 +3,4 @@
   become: yes
   shell: vboxmanage setproperty machinefolder {{ vbox.vm_storage_dir }}
   when: current_vm_dir != vbox.vm_storage_dir
-  mode: "0770"
+
