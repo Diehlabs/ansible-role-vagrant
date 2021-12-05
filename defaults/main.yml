@@ -1,7 +1,7 @@
 ---
-install_hyperv: false
-vbox:
+vagrant_install_hyperv: false
+vagrant_vbox_version: '6.1'
+vagrant_vbox:
   install: false
-  vm_storage_dir: "false"
+  vm_storage_dir: false
   vboxusers_group_members:
-  

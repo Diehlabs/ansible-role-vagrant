@@ -1,11 +1,14 @@
 ---
 - name: Installing Homebrew Cask Packages (Virtualbox)
-  homebrew_cask:
-    name: "{{ brew_cask_packages.virtualbox }}"
+  ansible.builtin.homebrew_cask:
+    name:
+      - virtualbox
     state: present
-  when: "vbox.install == true"
+  when: vagrant_vbox.install
 
 - name: Installing Homebrew Cask Packages (VAGRANT)
-  homebrew_cask:
-    name: "{{ brew_cask_packages.vagrant }}"
+  ansible.builtin.homebrew_cask:
+    name:
+      - vagrant
+      - vagrant-manager
     state: present

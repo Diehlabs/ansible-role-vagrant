@@ -1,21 +1,21 @@
 ---
 - name: Install Chocolatey packages (VirtualBox)
-  win_chocolatey:
+  chocolately.win_chocolatey:
     name: "{{ item }}"
     state: present
-  with_items: "{{ choco_pkgs.virtualbox }}"
-  when: "install_vbox == true"
+  with_items: "{{ vagrant_choco_pkgs.virtualbox }}"
+  when: install_vbox
 
 - name: Install Hyper-V
-  win_feature:
+  community.windows.win_feature:
     name: Microsoft-Hyper-V
     state: present
-    include_sub_features: yes
-    include_management_tools: yes
-  when: "install_hyperv == true"
+    include_sub_features: true
+    include_management_tools: true
+  when: vagrant_install_hyperv
 
 - name: Install Chocolatey packages (VAGRANT)
-  win_chocolatey:
+  chocolately.win_chocolatey:
     name: "{{ item }}"
     state: present
-  with_items: "{{ choco_pkgs.vagrant }}"
+  with_items: "{{ vagrant_choco_pkgs.vagrant }}"

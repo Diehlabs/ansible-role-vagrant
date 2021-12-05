@@ -1,0 +1,24 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    user_id: chris
+  tasks:
+    - name: Add the user needed to test role with defaults
+      ansible.builtin.user:
+        name: "{{ user_id }}"
+
+    - name: Install gpg-agent
+      ansible.builtin.apt:
+        update_cache: yes
+        name: gpg-agent
+
+    - name: "Include vagrant"
+      include_role:
+        name: "diehlabs.vagrant"
+      vars:
+        vagrant_vbox:
+          install: true
+          vm_storage_dir: false
+          group_members:
+            - "{{ user_id }}"

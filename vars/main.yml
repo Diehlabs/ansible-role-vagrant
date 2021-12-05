@@ -1,21 +1,7 @@
 ---
-brew_cask_packages:
+vagrant_choco_pkgs:
   virtualbox:
-  - virtualbox
-  #- virtualbox-extension-pack
+    - virtualbox
   vagrant:
-  - vagrant
-  - vagrant-manager
-
-apt_pkgs:
-  virtualbox:
-  - virtualbox
-  vagrant:
-  - vagrant
-
-choco_pkgs:
-  virtualbox:
-  - virtualbox
-  vagrant:
-  - vagrant
-  - vagrant-manager
+    - vagrant
+    - vagrant-manager

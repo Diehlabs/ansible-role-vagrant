@@ -1,6 +1,5 @@
 ---
 - name: Set VM storage directory
-  become: yes
-  shell: vboxmanage setproperty machinefolder {{ vbox.vm_storage_dir }}
-  when: current_vm_dir != vbox.vm_storage_dir
-
+  become: true
+  ansible.builtin.command: vboxmanage setproperty machinefolder {{ vagrant_vboxvm_storage_dir }}
+  when: current_vm_dir != vagrant_vboxvm_storage_dir
