@@ -1,5 +1,5 @@
 # ansible-role-vagrant
-[![Ansible Lint](https://github.com/CultClassik/ansible-role-vagrant/actions/workflows/Ansible%20Lint.yml/badge.svg)](https://github.com/CultClassik/ansible-role-vagrant/actions/workflows/Ansible%20Lint.yml)
+[![Ansible Lint](https://github.com/Diehlabs/ansible-role-vagrant/actions/workflows/Ansible%20Lint.yml/badge.svg)](https://github.com/Diehlabs/ansible-role-vagrant/actions/workflows/Ansible%20Lint.yml)
 =========
 
 This role will install Vagrant and optionally VirtualBox.
