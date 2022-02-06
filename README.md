@@ -1,5 +1,5 @@
 # ansible-role-vagrant
-[![Ansible Lint](https://github.com/CultClassik/ansible-role-vagrant/actions/workflows/Ansible%20Lint.yml/badge.svg)](https://github.com/CultClassik/ansible-role-vagrant/actions/workflows/Ansible%20Lint.yml)
+[![Ansible Lint](https://github.com/Diehlabs/ansible-role-vagrant/actions/workflows/test.yml/badge.svg)](https://github.com/Diehlabs/ansible-role-vagrant/actions/workflows/test.yml)
 =========
 
 This role will install Vagrant and optionally VirtualBox.
@@ -12,13 +12,12 @@ Any pre-requisites that may not be covered by Ansible itself or the role should 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-install_vbox: [bool]
-This variable determines whether or not VirtualBox will be installed.
-
-vagrant_install_hyperv: [bool]
-This variable determines whether or not Hyper-V will be installed. Only evaluated for Windows systems.
+Defaults:
+| Variable name | Description | Example value | Default value | Required? |
+|---|---|---|---|---|
+| vagrant_install_hyperv | Intall Hyper-V, only affects Windows targets | True | False | NO |
+| vagrant_vbox_version | Version of VirtualBox to install | 6.1 | 6.1 | YES |
+| vagrant_vbox | Misc options | [See defaults](defaults/main.yml) | -- | YES |
 
 Dependencies
 ------------
@@ -30,16 +29,16 @@ Example Playbook
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
+    - hosts: all
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: ansible-role-vagrant, vagrant_vbox_version: 5.0 }
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+[Chris Diehl](https://www.linkedin.com/in/chrisdiehl817/)
