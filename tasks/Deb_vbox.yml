@@ -10,7 +10,7 @@
 #     state: present
 
 - name: Add Oracle VirtualBox repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb http://us.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} multiverse"
     state: present
 

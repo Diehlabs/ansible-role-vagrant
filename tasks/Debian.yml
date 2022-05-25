@@ -1,20 +1,20 @@
 ---
 - name: Install Virtualbox (Linux)
-  include_tasks: Deb_vbox.yml
+  ansible.builtin.include_tasks: Deb_vbox.yml
   when: vagrant_vbox.install
 
 - name: Add HashiCorp GPG apt Key
-  apt_key:
+  ansible.builtin.apt_key:
     url: https://apt.releases.hashicorp.com/gpg
     state: present
 
 - name: Add HashiCorp releases repository
-  apt_repository:
+  ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
     state: present
 
 - name: Installing apt Packages (VAGRANT)
-  ansible.builtin.apt:
+  ansible.builtin.ansible.builtin.apt:
     pkg: vagrant
     state: present
     update_cache: true
