@@ -13,5 +13,4 @@
   register: current_vm_dir
   notify:
     - Set VM storage directory
-  when:
-    - vagrant_vboxvm_storage_dir != "false"
+  when: vagrant_vboxvm_storage_dir is defined and vagrant_vboxvm_storage_dir == True
