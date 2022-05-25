@@ -14,7 +14,7 @@
         name: gpg-agent
 
     - name: "Include vagrant"
-      include_role:
+      ansible.builtin.include_role:
         name: "diehlabs.vagrant"
       vars:
         vagrant_vbox:
