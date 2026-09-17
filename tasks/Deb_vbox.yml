@@ -33,7 +33,7 @@
     name: "{{ item }}"
     groups: vboxusers
     append: true
-  loop: "{{ vboxusers_group_members }}"
+  loop: "{{ vagrant_vbox.vboxusers_group_members }}"
   become: true
   tags:
     - molecule-notest
