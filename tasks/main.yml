@@ -14,4 +14,4 @@
   notify:
     - Set VM storage directory
   when:
-    - vagrant_vbox.vm_storage_dir != "false"
+    - vagrant_vbox.vm_storage_dir
