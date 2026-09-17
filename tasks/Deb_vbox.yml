@@ -18,15 +18,22 @@
   ansible.builtin.apt:
     pkg:
       - "virtualbox" # -{{ vagrant_vbox_version }}"
-      - virtualbox—ext–pack
+      - virtualbox-ext-pack
     state: present
     update_cache: true
   become: true
+  tags:
+    # virtualbox-ext-pack builds a DKMS kernel module, which can't work in
+    # a container -- it shares the host kernel and can't build/load modules
+    # against it. Skipped by molecule (see --skip-tags in CI).
+    - molecule-notest
 
 - name: Add users to vboxusers group
   ansible.builtin.user:
     name: "{{ item }}"
     groups: vboxusers
     append: true
-  loop: "{{ vboxusers_group_members }}"
+  loop: "{{ vagrant_vbox.vboxusers_group_members }}"
   become: true
+  tags:
+    - molecule-notest
