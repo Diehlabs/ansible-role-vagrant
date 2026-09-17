@@ -8,6 +8,16 @@
     url: https://apt.releases.hashicorp.com/gpg
     state: present
 
+- name: Add legacy HashiCorp GPG apt Key
+  # apt.releases.hashicorp.com/gpg only serves their current signing key,
+  # but some distro releases' repo metadata is still signed with this
+  # older, rotated-out one -- without it apt-get update fails with
+  # NO_PUBKEY AA16FCBCA621E701.
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: AA16FCBCA621E701
+    state: present
+
 - name: Add HashiCorp releases repository
   apt_repository:
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
