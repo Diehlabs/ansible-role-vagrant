@@ -18,7 +18,7 @@
   ansible.builtin.apt:
     pkg:
       - "virtualbox" # -{{ vagrant_vbox_version }}"
-      - virtualbox—ext–pack
+      - virtualbox-ext-pack
     state: present
     update_cache: true
   become: true
