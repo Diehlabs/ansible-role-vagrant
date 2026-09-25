@@ -26,7 +26,9 @@ platforms:
       - /run
       - /tmp:exec
     volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    cgroupns_mode: host
+    privileged: true
     capabilities:
       - SYS_ADMIN
     command: "/lib/systemd/systemd"
